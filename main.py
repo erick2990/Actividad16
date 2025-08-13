@@ -43,3 +43,28 @@ class Usuario:
         self.Nombre = nombre
         self.Carrera = carrera
 
+    def mostrar_usuario(self):
+        print(f'Nombre: {self.Nombre} Carrera: {self.Carrera}')
+
+
+class RegistroUsuarios:
+
+    def __init__(self):
+        self.usuarios = {} #Se crea un diccionario vacio donde se guardan todos los usuarios creados
+
+
+    def crear_usuario(self):
+
+        while True:
+            try:
+                cant = int(input('Ingrese la cantidad de cuantos usuarios desea crear: '))
+                for j in range(cant):
+                    print(f'Ingrese los datos del {j+1} usuario')
+                    carnet = input('Ingrese el numero de carnet: ')
+                    nombre = input('Escriba el nombre: ')
+                    carrera = input('Ingrese la carreara: ')
+                    usuario_tmp = Usuario(nombre, carrera)
+
+            except Exception as e:
+                print('Error - Por favor verifique la entrada de datos y vuelva a intentarlo')
+
